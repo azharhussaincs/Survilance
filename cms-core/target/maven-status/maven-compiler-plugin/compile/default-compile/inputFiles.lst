@@ -1,0 +1,16 @@
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/database/DatabaseManager.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/model/GridLayout.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/model/User.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/model/NvrDevice.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/stream/StreamSession.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/service/AuthService.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/util/EncryptionUtil.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/config/AppConfig.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/service/NvrService.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/stream/StreamManager.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/onvif/OnvifClient.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/model/Camera.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/repository/NvrRepository.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/util/ValidationUtil.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/repository/UserRepository.java
+/home/albaloshi/Desktop/claude/CMS-CameraManagementSystem/cms-core/src/main/java/com/cms/repository/CameraRepository.java

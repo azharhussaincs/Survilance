@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cms.ui.controller.DashboardController"
+            styleClass="dashboard-root"
+            stylesheets="@../css/dark-theme.css">
+
+    <!-- TOP TOOLBAR -->
+    <top>
+        <VBox styleClass="toolbar-container">
+            <!-- Title Bar -->
+            <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="12">
+                <Label text="🎥" styleClass="toolbar-logo"/>
+                <Label text="CMS" styleClass="toolbar-app-name"/>
+                <Label text="Camera Management System" styleClass="toolbar-app-subtitle"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="userLabel" styleClass="user-badge"/>
+                <Separator orientation="VERTICAL" styleClass="toolbar-separator"/>
+                <Label text="●" styleClass="status-dot-green"/>
+                <Label text="LIVE" styleClass="live-label"/>
+            </HBox>
+
+            <!-- Action Toolbar -->
+            <HBox styleClass="action-toolbar" alignment="CENTER_LEFT" spacing="8">
+                <padding>
+                    <Insets top="0" right="12" bottom="0" left="12"/>
+                </padding>
+                <Button fx:id="addNvrBtn" text="+ Add NVR" styleClass="toolbar-button-primary"
+                        onAction="#handleAddNvr"/>
+                <Button fx:id="deleteNvrBtn" text="✕ Remove NVR" styleClass="toolbar-button-danger"
+                        onAction="#handleDeleteNvr"/>
+                <Separator orientation="VERTICAL" styleClass="toolbar-separator"/>
+                <Label text="Layout:" styleClass="toolbar-label"/>
+                <ComboBox fx:id="layoutSelector" styleClass="layout-combo" prefWidth="80"/>
+                <Separator orientation="VERTICAL" styleClass="toolbar-separator"/>
+                <Button fx:id="refreshBtn" text="⟳ Refresh" styleClass="toolbar-button"
+                        onAction="#handleRefresh"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ProgressIndicator fx:id="busyIndicator" maxWidth="18" maxHeight="18"/>
+                <Button text="⏻ Logout" styleClass="toolbar-button-logout" onAction="#handleLogout"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <SplitPane fx:id="mainSplitPane" dividerPositions="0.22" styleClass="main-split">
+
+            <!-- LEFT PANEL: NVR Tree -->
+            <VBox styleClass="sidebar" minWidth="200" maxWidth="360">
+                <HBox styleClass="sidebar-header" alignment="CENTER_LEFT" spacing="8">
+                    <Label text="📡" styleClass="sidebar-icon"/>
+                    <Label text="Devices" styleClass="sidebar-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <HBox spacing="4" alignment="CENTER_RIGHT">
+                        <Label fx:id="nvrCountLabel" text="0" styleClass="badge-blue"/>
+                        <Label text="NVR" styleClass="badge-label"/>
+                        <Label fx:id="cameraCountLabel" text="0" styleClass="badge-green"/>
+                        <Label text="CAM" styleClass="badge-label"/>
+                    </HBox>
+                </HBox>
+
+                <TreeView fx:id="nvrTreeView" VBox.vgrow="ALWAYS"
+                          styleClass="nvr-tree" showRoot="false"/>
+
+                <VBox styleClass="sidebar-footer" spacing="4">
+                    <Label text="💡 Tip: Double-click or drag a camera to view" styleClass="tip-label" wrapText="true"/>
+                </VBox>
+            </VBox>
+
+            <!-- CENTER: Camera Grid -->
+            <VBox styleClass="grid-container">
+                <HBox styleClass="grid-header" alignment="CENTER_LEFT" spacing="8">
+                    <Label text="📺" styleClass="grid-icon"/>
+                    <Label text="Live Monitor" styleClass="grid-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="Drag cameras from the left panel into grid cells" styleClass="grid-hint"/>
+                </HBox>
+
+                <ScrollPane fx:id="gridScrollPane" VBox.vgrow="ALWAYS" fitToWidth="true" fitToHeight="true"
+                            styleClass="grid-scroll" pannable="false">
+                    <GridPane fx:id="cameraGrid" styleClass="camera-grid"
+                              hgap="0" vgap="0" maxWidth="Infinity" maxHeight="Infinity"/>
+                </ScrollPane>
+            </VBox>
+
+        </SplitPane>
+    </center>
+
+    <!-- BOTTOM STATUS BAR -->
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT" spacing="12">
+            <padding>
+                <Insets top="0" right="12" bottom="0" left="12"/>
+            </padding>
+            <Label text="●" styleClass="status-dot-green"/>
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="CMS v1.0.0" styleClass="version-text"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
